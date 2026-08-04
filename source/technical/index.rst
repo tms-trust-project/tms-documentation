@@ -23,10 +23,11 @@ To understand the TMS architecture it is useful to establish definitions for the
 components comprising TMS as well as the external components with which TMS will interact:
 
 *Science Gateway*
-  A project that uses TMS for trust management and an application client, such as Tapis, for
-  operations on resources at a resource provider.
+  A project associated with a single institution and available via a UI. It will use TMS for trust
+  management and an application client, such as Tapis, for operations on resources at a resource provider.
 *Application Client*
-  An application, such as a Tapis, that will make use of TMS for credential management.
+  An application, such as a Tapis, that will make use of TMS for credential management. TMS will be used
+  to delegate access to resource accounts.
 *Application Client User*
   A person who performs a login to the application client through a federated identity broker
   connected to their institution. Typically initiated by a science gateway.
@@ -39,27 +40,46 @@ components comprising TMS as well as the external components with which TMS will
 *Resource Provider OAuth Server (RPOS)*
   An OAuth server for a resource provider.
 *Resource Provider Resource Server (RPRS)*
-  A REST API service available at a resource provider allowing for the retrieval of resource
-  metadata associated with a user account.
+  A REST API service available at a resource provider allowing for the retrieval of resource metadata
+  associated with a user account.
 *Resource*
   The host provided by a resource provider, such as *stampede3@tacc*, *expanse@sdsc*.
 *TMS Portal*
   The TMS web UI and back-end REST API server supporting the RP linking and resource delegation
-  initiated by the gateway. Provides OAuth login support to Tapis and the gateway.
+  initiated by the gateway. Provides OAuth login support to the application client and the gateway.
 *TMS Credential Server*
   The TMS back-end REST API server supporting SSH key-pair generation and SSH public key lookup.
 *TMS Host Module*
   A TMS program on the resource host that is executed when a resource account user attempts to
   login to the host using SSH. The program is also referred to as TMS KeyCmd.
 
+The TMS components are the TMS Portal, Credential Server and Host Module. The other components are the
+entities with which TMS will interact.
+
+
+Basic Flows Supported by TMS
+============================
+
+TMS supports flows related to authentication, resource account linking, resource delegation and
+command execution on remote hosts.
+
+*Authentication*
+  A person, the application client user, establishes their identity by logging in to their institution
+  through TMS.
+*Resource Account Linking*
+  The application client user links their identity with a resource provider by logging into their
+  resource provider account through TMS.
+*Resource Account Delegation*
+  The application client user authorizes the application client to act on their behalf on specific
+  resource hosts.
+*Resource Credential Registration*
+  The application client user requests that TMS generate access credentials for a specific resource host.
+  The application client saves the credential for later use. Note that TMS does not save the secret part
+  of the credential, the private key. TMS only persists the public key.
+*Resource Host Command Execution*
+  The application client uses the credential to access the resource host on behalf of the user.
+
 **UNDER CONSTRUCTION**
-
-TMS Components
---------------
-
-
-External Components
--------------------
 
 
 .. .. Minimal Viable Product
