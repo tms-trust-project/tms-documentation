@@ -2,4 +2,4 @@
 TMS Documentation
 =================
 
-The Trust Manager System (TMS) is...
+readthedocs documentation for the TACC Trust Manager System (TMS)
