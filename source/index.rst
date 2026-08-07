@@ -46,7 +46,7 @@ TMS is a multi-tenant web application exposing a REST API to manage SSH keys, cl
 About This Documentation
 ========================
 
-.. note::
+.. warning::
   This documentation is under construction.
 
 This documentation includes:
