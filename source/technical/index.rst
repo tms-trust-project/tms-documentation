@@ -30,13 +30,15 @@ components comprising TMS as well as the external components with which TMS will
   to delegate access to resource accounts.
 *Application Client User*
   A person who performs a login to the application client through a federated identity broker
-  connected to their institution. Typically initiated by a science gateway.
+  connected to their institution. The login is typically initiated by a science gateway.
 *Federated Identity Broker*
   Service supporting federated login, e.g., *Globus* or *CILogon*. This is the service the application
-  client is configured to use to allow users to login through their institution.
+  client is configured to use to allow users to login through their institution, such as a university
+  or research center.
 *Resource Provider (RP)*
   A cyber-infrastructure provider supporting OAuth login and providing one or more resource hosts.
-  Examples of such providers are TACC, SDSC, NCSA, Purdue and PSC.
+  Examples of such providers are the Texas Advanced Computing Center (TACC) and the San Diego
+  Supercomputer Center (SDSC).
 *Resource Provider OAuth Server (RPOS)*
   An OAuth server for a resource provider.
 *Resource Provider Resource Server (RPRS)*
@@ -45,10 +47,10 @@ components comprising TMS as well as the external components with which TMS will
 *Resource*
   The host provided by a resource provider, such as *stampede3@tacc*, *expanse@sdsc*.
 *TMS Portal*
-  The TMS web UI and back-end REST API server supporting the RP linking and resource delegation
+  The TMS web UI and back-end REST API service supporting the RP linking and resource delegation
   initiated by the gateway. Provides OAuth login support to the application client and the gateway.
 *TMS Credential Server*
-  The TMS back-end REST API server supporting SSH key-pair generation and SSH public key lookup.
+  The TMS back-end REST API service supporting SSH key-pair generation and SSH public key lookup.
 *TMS Host Module*
   A TMS program on the resource host that is executed when a resource account user attempts to
   login to the host using SSH. The program is also referred to as TMS KeyCmd.
@@ -79,8 +81,20 @@ command execution on remote hosts.
 *Resource Host Command Execution*
   The application client uses the credential to access the resource host on behalf of the user.
 
-**UNDER CONSTRUCTION**
+.. warning::
+  **UNDER CONSTRUCTION**
 
+
+High Level Architecture
+=======================
+.. figure:: TMSArchitecture_gslide.png
+   :align: center
+
+   **Figure 1 - TMS High Level Architecture**
+
+Figure 1 shows a high level view of the TMS architecture with the basic flows roughly labelled.
+
+.. .. The MVP release is restricted in these ways:
 
 .. .. Minimal Viable Product
 .. .. ======================
