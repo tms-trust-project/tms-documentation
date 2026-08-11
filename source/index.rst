@@ -20,7 +20,7 @@ Welcome to the Trust Manager System (TMS)
 What Problem does TMS Address?
 ==============================
 
-Many research applications and scientific workflows require secure access to distributed resources across multiple organizations. The challenge in automating these workflows is to (1) securely manage user credentials, and (2) execute without human intervention. Automation is limited by two primary barriers: securely delegating user credentials across systems and satisfying Multi-Factor Authentication (MFA) requirements without requiring human intervention.  
+Many research applications and scientific workflows require secure access to distributed resources across multiple organizations. The challenge in automating these workflows is to (1) securely manage user credentials, and (2) execute without human intervention. Automation is primarirly limited by two barriers: securely delegating user credentials across systems and satisfying Multi-Factor Authentication (MFA) requirements without requiring human intervention.  
 
 
 To address these challenges, the Trust Manager System (TMS) implements authentication and authorization protocols that enable applications to securely connect to host systems on behalf of users and issue commands as those users. TMS is designed to support automated application authentication with four key goals:

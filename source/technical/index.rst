@@ -71,7 +71,7 @@ command execution on remote hosts.
 *Resource Account Linking*
   The application client user links their identity with a resource provider by logging into their
   resource provider account through TMS.
-*Resource Account Delegation*
+*Resource Delegation*
   The application client user authorizes the application client to act on their behalf on specific
   resource hosts.
 *Resource Credential Registration*
@@ -93,6 +93,61 @@ High Level Architecture
    **Figure 1 - TMS High Level Architecture**
 
 Figure 1 shows a high level view of the TMS architecture with the basic flows roughly labelled.
+
+Flow Diagrams
+=============
+
+Authentication Flow
+-------------------
+
+.. figure:: TMSFlow1_gslide.png
+   :align: center
+
+   **Figure 2 - Authentication Flow**
+
+Figure 2 shows a detailed view of the flow to establish the initial application client user identity.
+
+Resource Account Linking Flow
+-----------------------------
+
+.. figure:: TMSFlow2_gslide.png
+   :align: center
+
+   **Figure 3 - Resource Account Linking Flow**
+
+Figure 3 shows a detailed view of how the application client user links their identity with
+a resource provider account.
+
+Resource Delegation Flow
+------------------------
+
+.. figure:: TMSFlow3_gslide.png
+   :align: center
+
+   **Figure 4 - Resource Delegation Flow**
+
+Figure 4 shows a detailed view of how the application client user authorizes the application client
+to act on their behalf on specific resource hosts.
+
+Resource Credential Registration Flow
+-------------------------------------
+
+.. figure:: TMSFlow4_gslide.png
+   :align: center
+
+   **Figure 5 - Resource Credential Registration Flow**
+
+Figure 5 shows a detailed view of the flow to
+
+Authentication Flow?
+-------------------
+
+.. figure:: TMSFlow5_gslide.png
+   :align: center
+
+   **Figure 6 - TMS Authentication Flow**
+
+Figure 6 shows a detailed view of the flow to 
 
 .. .. The MVP release is restricted in these ways:
 
