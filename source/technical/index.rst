@@ -137,17 +137,20 @@ Resource Credential Registration Flow
 
    **Figure 5 - Resource Credential Registration Flow**
 
-Figure 5 shows a detailed view of the flow to
+Figure 5 shows a detailed view of how the application client can request that TMS generate
+access credentials for a user and a specific resource host. Note that as shown the application
+client typically stores the credential for later use. Note that TMS does not save the secret part
+of the credential, the private key. TMS only persists the public key.
 
-Authentication Flow?
--------------------
+Resource Host Command Execution Flow
+------------------------------------
 
 .. figure:: TMSFlow5_gslide.png
    :align: center
 
-   **Figure 6 - TMS Authentication Flow**
+   **Figure 6 - Resource Host Command Execution Flow**
 
-Figure 6 shows a detailed view of the flow to 
+Figure 6 shows a detailed view of how the ?? 
 
 .. .. The MVP release is restricted in these ways:
 
