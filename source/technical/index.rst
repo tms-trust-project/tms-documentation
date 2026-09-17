@@ -131,7 +131,7 @@ Resource Delegation Flow
    **Figure 4 - Resource Delegation Flow**
 
 Figure 4 shows a detailed view of how the application client user authorizes the application client
-to act on their behalf on specific resource hosts.
+to act on their behalf for a resource provider.
 
 Resource Credential Registration Flow
 -------------------------------------
@@ -142,7 +142,7 @@ Resource Credential Registration Flow
    **Figure 5 - Resource Credential Registration Flow**
 
 Figure 5 shows a detailed view of how the application client can request that TMS generate
-access credentials for a user and a specific resource host. Note that as shown the application
+access credentials for a user and resource host. Note that as shown the application
 client typically stores the credential for later use. Note that TMS does not save the secret part
 of the credential, the private key. TMS only persists the public key.
 
@@ -154,8 +154,8 @@ Resource Host Command Execution Flow
 
    **Figure 6 - Resource Host Command Execution Flow**
 
-Figure 6 shows a detailed view of how application client uses the credential to access
-the resource host on behalf of the user. 
+Figure 6 shows a detailed view of how the application client uses the credential to access
+the resource host on behalf of the user.
 
 .. .. The MVP release is restricted in these ways:
 
