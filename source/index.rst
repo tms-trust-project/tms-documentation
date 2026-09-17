@@ -20,22 +20,29 @@ Welcome to the Trust Manager System (TMS)
 What Problem does TMS Address?
 ==============================
 
-Many research applications and scientific workflows require secure access to distributed resources across multiple organizations. The challenge in automating these workflows is to (1) securely manage user credentials, and (2) execute without human intervention. Automation is primarirly limited by two barriers: securely delegating user credentials across systems and satisfying Multi-Factor Authentication (MFA) requirements without requiring human intervention.  
+Many research applications and scientific workflows require secure access to distributed resources across multiple
+organizations. The challenge in automating these workflows is to (1) securely manage user credentials, and (2) use
+those credentials to execute commands on the resources without human intervention. Automation is primarirly limited
+by two barriers: securely delegating user credentials across systems and satisfying Multi-Factor Authentication (MFA)
+requirements without requiring human intervention.
 
-
-To address these challenges, the Trust Manager System (TMS) implements authentication and authorization protocols that enable applications to securely connect to host systems on behalf of users and issue commands as those users. TMS is designed to support automated application authentication with four key goals:
+To address these challenges, the Trust Manager System (TMS) implements authentication and authorization protocols
+that enable applications to securely connect to host systems on behalf of users and issue commands as those users.
+TMS is designed to support automated application authentication with four key goals:
 
    - No manual key distribution
-   - No human-in-the-loop, limited duration MFA
+   - Limited duration MFA with no human-in-the-loop
    - No secrets shared with applications or users
    - Account access using federated identities
 
 What is TMS?
 ============
 
-In essence, the Trust Manager System (TMS) provides a manageable way for a science gateway user to authorize and make use of resources at various institutions without having to manually register credentials for each individual resource.
+In essence, the Trust Manager System (TMS) provides a manageable way for a science gateway user to authorize and make
+use of resources at various institutions without having to manually register credentials for each individual resource.
 
-TMS is a multi-tenant web application exposing a REST API to manage SSH keys, client applications, user delegations, user federated identity authentication, resource hosts, and resource host account mappings.
+TMS is a web application exposing a REST API to manage SSH keys, client applications, user delegations, user federated
+identity authentication, resource hosts, and resource host account mappings.
 
 ..  TMS includes a module that runs on hosts, such as High Performance Computing (HPC) login nodes, VMs or IoT devices.
 

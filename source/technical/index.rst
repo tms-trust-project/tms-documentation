@@ -19,7 +19,7 @@ Architecture
 Terminology
 ===========
 
-To understand the TMS architecture it is useful to establish definitions for the various
+To understand the TMS architecture, it is useful to establish definitions for the various
 components comprising TMS as well as the external components with which TMS will interact:
 
 *Science Gateway*
@@ -27,10 +27,11 @@ components comprising TMS as well as the external components with which TMS will
   management and an application client, such as Tapis, for operations on resources at a resource provider.
 *Application Client*
   An application, such as a Tapis, that will make use of TMS for credential management. TMS will be used
-  to delegate access to resource accounts.
+  to allow an application client user to delegate access to resource accounts.
 *Application Client User*
   A person who performs a login to the application client through a federated identity broker
-  connected to their institution. The login is typically initiated by a science gateway.
+  connected to their institution. The login is typically initiated by a science gateway, in which case
+  the term science gateway user would apply.
 *Federated Identity Broker*
   Service supporting federated login, e.g., *Globus* or *CILogon*. This is the service the application
   client is configured to use to allow users to login through their institution, such as a university
@@ -48,12 +49,14 @@ components comprising TMS as well as the external components with which TMS will
   The host provided by a resource provider, such as *stampede3@tacc*, *expanse@sdsc*.
 *TMS Portal*
   The TMS web UI and back-end REST API service supporting the RP linking and resource delegation
-  initiated by the gateway. Provides OAuth login support to the application client and the gateway.
+  initiated by the science gateway. Provides OAuth login support to the application client and the
+  gateway.
 *TMS Credential Server*
   The TMS back-end REST API service supporting SSH key-pair generation and SSH public key lookup.
 *TMS Host Module*
   A TMS program on the resource host that is executed when a resource account user attempts to
-  login to the host using SSH. The program is also referred to as TMS KeyCmd.
+  login to the host using SSH. The program is also referred to as TMS KeyCmd. This module makes
+  calls to the TMS Credential Server.
 
 The TMS components are the TMS Portal, Credential Server and Host Module. The other components are the
 entities with which TMS will interact.
@@ -69,7 +72,7 @@ command execution on remote hosts.
   A person, the application client user, establishes their identity by logging in to their institution
   through TMS.
 *Resource Account Linking*
-  The application client user links their identity with a resource provider by logging into their
+  The application client user links their identity with a resource provider by logging in to their
   resource provider account through TMS.
 *Resource Delegation*
   The application client user authorizes the application client to act on their behalf on specific
@@ -77,7 +80,8 @@ command execution on remote hosts.
 *Resource Credential Registration*
   The application client user requests that TMS generate access credentials for a specific resource host.
   The application client saves the credential for later use. Note that TMS does not save the secret part
-  of the credential, the private key. TMS only persists the public key.
+  of the credential, the private key. TMS only persists the public key. The application client may pass the
+  credentials back to the client user or store them in a secure location.
 *Resource Host Command Execution*
   The application client uses the credential to access the resource host on behalf of the user.
 
@@ -150,7 +154,8 @@ Resource Host Command Execution Flow
 
    **Figure 6 - Resource Host Command Execution Flow**
 
-Figure 6 shows a detailed view of how the ?? 
+Figure 6 shows a detailed view of how application client uses the credential to access
+the resource host on behalf of the user. 
 
 .. .. The MVP release is restricted in these ways:
 
