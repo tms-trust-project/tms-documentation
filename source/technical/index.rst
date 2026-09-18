@@ -85,9 +85,6 @@ command execution on remote hosts.
 *Resource Host Command Execution*
   The application client uses the credential to access the resource host on behalf of the user.
 
-.. warning::
-  **UNDER CONSTRUCTION**
-
 
 High Level Architecture
 =======================

@@ -53,9 +53,6 @@ identity authentication, resource hosts, and resource host account mappings.
 About This Documentation
 ========================
 
-.. warning::
-  This documentation is under construction.
-
 This documentation includes:
 
    .. - :doc:`getting-started/index` -- try TMS
@@ -79,9 +76,9 @@ Source code may be found at these links:
    - `TMS KeyCMD source code`_ -- KeyCMD github repository
    - `TMS Load Tests`_ -- Load test framework
 
-.. _API livedocs: https://tapis-project.github.io/tms-live-docs
-.. _TMS Portal source code: https://github.com/tapis-project/tms_portal
-.. _TMS Credential Server source code: https://github.com/tapis-project/tms_server
-.. _TMS KeyCMD source code: https://github.com/tapis-project/tms_keycmd
-.. _TMS Load Tests: https://github.com/tapis-project/tms_loadtest
+.. _API livedocs: https://tms-trust-project.github.io/tms-live-docs
+.. _TMS Portal source code: https://github.com/tms-trust-project/tms_portal
+.. _TMS Credential Server source code: https://github.com/tms-trust-project/tms_server
+.. _TMS KeyCMD source code: https://github.com/tms-trust-project/tms_keycmd
+.. _TMS Load Tests: https://github.com/tms-trust-project/tms_loadtest
 
