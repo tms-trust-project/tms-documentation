@@ -38,8 +38,9 @@ TMS is designed to support automated application authentication with four key go
 What is TMS?
 ============
 
-In essence, the Trust Manager System (TMS) provides a manageable way for a science gateway user to authorize and make
+In essence, the Trust Manager System (TMS) provides a manageable way for an application user to authorize and make
 use of resources at various institutions without having to manually register credentials for each individual resource.
+An example of a typical application would be a science gateway web application.
 
 TMS is a web application exposing a REST API to manage SSH keys, client applications, user delegations, user federated
 identity authentication, resource hosts, and resource host account mappings.
@@ -52,6 +53,9 @@ identity authentication, resource hosts, and resource host account mappings.
 
 About This Documentation
 ========================
+
+.. warning::
+  This documentation is under construction.
 
 This documentation includes:
 
