@@ -28,15 +28,16 @@ components comprising TMS as well as the external components with which TMS will
 
 *Application Client*
   An application that will make use of TMS for credential management. TMS will be used
-  to allow an application client user to delegate access to resource provider accounts.
+  to allow an application user to delegate access to resource provider accounts.
 *Federated Identity Broker*
   Service supporting federated login, e.g., *Globus* or *CILogon*. This is the service
-  used by TMS to allow users to login through their institution, such as a university or
+  used by TMS to allow users to log in through their institution, such as a university or
   research center.
 *Resource Provider (RP)*
   A cyber-infrastructure provider supporting OAuth login and providing one or more resource hosts.
-  Examples of such providers are the Texas Advanced Computing Center (TACC) and the San Diego
-  Supercomputer Center (SDSC).
+  Examples of such providers are the Texas Advanced Computing Center (TACC), the San Diego
+  Supercomputer Center (SDSC), the Pittsburgh Supercomputing Center (PSC) and the National Center
+  for Supercomputing Applications (NCSA).
 *Resource Provider OAuth Server (RPOS)*
   An OAuth server for a resource provider.
 *Resource Provider Resource Server (RPRS)*
@@ -45,9 +46,9 @@ components comprising TMS as well as the external components with which TMS will
 *Resource*
   The host provided by a resource provider, such as *stampede3@tacc*, *expanse@sdsc*.
 *TMS Portal WebApp*
-  A web-based application allowing a user to link their institutional identity to selected resource
-  providers and approve (i.e. delegate) selected application clients to act on their behalf when
-  interacting with those resource providers.
+  A web-based application allowing a user to link their institutional identity to a resource
+  provider and approve (i.e. delegate) an application client to act on their behalf when interacting
+  with those resource providers.
 *TMS Portal API Backend*
   A back-end REST API service supporting OAuth login, RP linking and resource delegation initiated
   by the TMS Portal WebApp.
@@ -69,24 +70,25 @@ Basic Flows Supported by TMS
 ============================
 
 TMS supports flows related to authentication, resource account linking, resource delegation and
-command execution on remote hosts.
+remote command execution.
 
 *Authentication*
-  A person, the application client user, establishes their identity by logging in to their institution
-  through TMS.
+  A user establishes their identity by logging in to their institution through the TMS Portal WebApp.
 *Resource Account Linking*
-  The application client user links their identity with a resource provider by logging in to their
-  resource provider account through TMS.
+  Once logged in to the TMS portal, the user links their identity with a resource provider by logging in to
+  their resource provider account.
 *Resource Delegation*
-  The application client user authorizes the application client to act on their behalf on specific
-  resource hosts.
+  Once logged in to the TMS portal, the user delegates an application client to act on their behalf for
+  operations at a resource provider.
 *Resource Credential Registration*
-  The application client user requests that TMS generate access credentials for a specific resource host.
-  The application client saves the credential for later use. Note that TMS does not save the secret part
-  of the credential, the private key. TMS only persists the public key. The application client may pass the
-  credentials back to the client user or store them in a secure location.
+  Once the resource account is linked and the delegation is approved, the application user requests
+  that the application register credentials for a resource host. The application client calls the TMS
+  Credential Server to request new access credentials. The application client saves the credential for
+  later use. Note that TMS does not save the secret part of the credential, the private key.
+  TMS only persists the public key. The application client may pass the credentials back to the user
+  or store them in a secure location.
 *Resource Host Command Execution*
-  The application client uses the credential to access the resource host on behalf of the user.
+  The application client uses the registered credential to access the resource host on behalf of the user.
 
 
 High Level Architecture
@@ -109,7 +111,7 @@ Authentication Flow
 
    **Figure 2 - Authentication Flow**
 
-Figure 2 shows a detailed view of the flow to establish the initial application client user identity.
+Figure 2 shows a detailed view of the flow to establish the initial application user identity.
 
 Resource Account Linking Flow
 -----------------------------
@@ -119,7 +121,7 @@ Resource Account Linking Flow
 
    **Figure 3 - Resource Account Linking Flow**
 
-Figure 3 shows a detailed view of how the application client user links their identity with
+Figure 3 shows a detailed view of how the application user links their identity with
 a resource provider account.
 
 Resource Delegation Flow
@@ -130,7 +132,7 @@ Resource Delegation Flow
 
    **Figure 4 - Resource Delegation Flow**
 
-Figure 4 shows a detailed view of how the application client user authorizes the application client
+Figure 4 shows a detailed view of how the application user authorizes the application client
 to act on their behalf for a resource provider.
 
 Resource Credential Registration Flow
