@@ -53,6 +53,9 @@ identity authentication, resource hosts, and resource host account mappings.
 About This Documentation
 ========================
 
+.. warning::
+  This documentation is under construction.
+
 This documentation includes:
 
    .. - :doc:`getting-started/index` -- try TMS

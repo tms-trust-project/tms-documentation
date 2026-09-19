@@ -16,26 +16,23 @@
 Architecture
 ###########################
 
+
+.. warning::
+  **UNDER CONSTRUCTION**
+
 Terminology
 ===========
 
 To understand the TMS architecture, it is useful to establish definitions for the various
 components comprising TMS as well as the external components with which TMS will interact:
 
-*Science Gateway*
-  A project associated with a single institution and available via a UI. It will use TMS for trust
-  management and an application client, such as Tapis, for operations on resources at a resource provider.
 *Application Client*
-  An application, such as a Tapis, that will make use of TMS for credential management. TMS will be used
-  to allow an application client user to delegate access to resource accounts.
-*Application Client User*
-  A person who performs a login to the application client through a federated identity broker
-  connected to their institution. The login is typically initiated by a science gateway, in which case
-  the term science gateway user would apply.
+  An application that will make use of TMS for credential management. TMS will be used
+  to allow an application client user to delegate access to resource provider accounts.
 *Federated Identity Broker*
-  Service supporting federated login, e.g., *Globus* or *CILogon*. This is the service the application
-  client is configured to use to allow users to login through their institution, such as a university
-  or research center.
+  Service supporting federated login, e.g., *Globus* or *CILogon*. This is the service
+  used by TMS to allow users to login through their institution, such as a university or
+  research center.
 *Resource Provider (RP)*
   A cyber-infrastructure provider supporting OAuth login and providing one or more resource hosts.
   Examples of such providers are the Texas Advanced Computing Center (TACC) and the San Diego
@@ -47,19 +44,25 @@ components comprising TMS as well as the external components with which TMS will
   associated with a user account.
 *Resource*
   The host provided by a resource provider, such as *stampede3@tacc*, *expanse@sdsc*.
-*TMS Portal*
-  The TMS web UI and back-end REST API service supporting the RP linking and resource delegation
-  initiated by the science gateway. Provides OAuth login support to the application client and the
-  gateway.
+*TMS Portal WebApp*
+  A web-based application allowing a user to link their institutional identity to selected resource
+  providers and approve (i.e. delegate) selected application clients to act on their behalf when
+  interacting with those resource providers.
+*TMS Portal API Backend*
+  A back-end REST API service supporting OAuth login, RP linking and resource delegation initiated
+  by the TMS Portal WebApp.
 *TMS Credential Server*
   The TMS back-end REST API service supporting SSH key-pair generation and SSH public key lookup.
 *TMS Host Module*
   A TMS program on the resource host that is executed when a resource account user attempts to
   login to the host using SSH. The program is also referred to as TMS KeyCmd. This module makes
   calls to the TMS Credential Server.
+*Science Gateway*
+  A web-based application that acts as a client to TMS and hides some of the complexity of TMS in order
+  to provide a better user experience.
 
-The TMS components are the TMS Portal, Credential Server and Host Module. The other components are the
-entities with which TMS will interact.
+The TMS components are the TMS Portal WebApp, Portal API Backend, Credential Server and Host Module.
+The other components are the entities with which TMS will interact.
 
 
 Basic Flows Supported by TMS
