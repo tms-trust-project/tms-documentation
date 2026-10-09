@@ -45,11 +45,6 @@ An example of a typical application would be a science gateway web application.
 TMS is a web application exposing a REST API to manage SSH keys, client applications, user delegations, user federated
 identity authentication, resource hosts, and resource host account mappings.
 
-..  TMS includes a module that runs on hosts, such as High Performance Computing (HPC) login nodes, VMs or IoT devices.
-
-
-.. In its initial incarnation, the **TMS MVP** (Minimal Viable Product) makes a number of simplifying assumptions and implements only a subset of the full API capabilities. This is the TMS version currently available and it's comprised of two components. The **tms_server** web application implements all APIs and maintains state in a Sqlite database. The **KeyCmd** module is a small executable loaded by SSHD that runs on machines into which TMS client applications login on behalf of users.
-
 
 About This Documentation
 ========================
@@ -59,12 +54,7 @@ About This Documentation
 
 This documentation includes:
 
-   .. - :doc:`getting-started/index` -- try TMS
-
    - :doc:`technical/index` -- design and API discussions
-
-   .. - :doc:`deployment/index` -- install TMS components
-   .. - :doc:`administration/index` -- maintaining TMS
    
 Online Documentation
 --------------------
